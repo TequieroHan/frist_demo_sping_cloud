@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: GateWay
+  cloud:
+    gateway:
+      routes:
+        - id: System
+          uri: http://127.0.0.1:9001
+          predicates:
+            - Path=/System/**
+server:
+  port: 9000
+#Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
