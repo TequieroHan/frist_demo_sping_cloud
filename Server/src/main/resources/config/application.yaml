@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: Server
+  datasource:
+    url: jdbc:mysql://localhost:3306/frist_initializr?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT #配置数据库连接路径
+    username: frist_initializr
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver #配置数据库驱动
+
+#指定mybatis  mapper 解析路径
+mybatis:
+  type-aliases-package: com.young.server.domain
+  mapper-locations: classpath:mapper/**/*.xml
+logging:
+  level:
+    com.course.server.mapper: trace

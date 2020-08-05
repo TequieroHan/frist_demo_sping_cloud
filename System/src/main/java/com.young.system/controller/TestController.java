@@ -1,21 +1,32 @@
 package com.young.system.controller;
 
-import com.young.system.domain.Test;
-import com.young.system.service.TestService;
+import com.young.server.domain.Test;
+import com.young.server.service.TestService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+@RequestMapping("/test")
 @RestController
 public class TestController {
 
     @Resource
     private TestService testService;
 
-    @GetMapping("/test")
-    public List<Test> list(){
-        return testService.list();
+    @GetMapping("/list_asc")
+    public List<Test> listAsc(){
+        return testService.listASC();
+    }
+
+    @GetMapping("/list_desc")
+    public List<Test> listDesc(){
+        return testService.listDesc();
+    }
+    @GetMapping("/one")
+    private List<Test> getTest(){
+        return testService.getTest();
     }
 }
