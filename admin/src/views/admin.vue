@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div id="navbar" class="navbar navbar-default          ace-save-state">
+        <div id="navbar" class="navbar navbar-default   ace-save-state">
             <div class="navbar-container ace-save-state" id="navbar-container">
                 <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
                     <span class="sr-only">Toggle sidebar</span>
@@ -16,7 +16,7 @@
                     <a href="index.html" class="navbar-brand">
                         <small>
                             <i class="fa fa-leaf"></i>
-                            Ace Admin
+                           后台管理界面
                         </small>
                     </a>
                 </div>
@@ -184,7 +184,7 @@
                                     <ul class="dropdown-menu dropdown-navbar">
                                         <li>
                                             <a href="#" class="clearfix">
-                                                <img src="assets/images/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
+                                                <img src="../../public/ace/assets/images/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
                                                 <span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Alex:</span>
@@ -201,7 +201,7 @@
 
                                         <li>
                                             <a href="#" class="clearfix">
-                                                <img src="assets/images/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
+                                                <img src="../../public/ace/assets/images/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
                                                 <span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Susan:</span>
@@ -218,7 +218,7 @@
 
                                         <li>
                                             <a href="#" class="clearfix">
-                                                <img src="assets/images/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
+                                                <img src="../../public/ace/assets/images/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
                                                 <span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Bob:</span>
@@ -235,7 +235,7 @@
 
                                         <li>
                                             <a href="#" class="clearfix">
-                                                <img src="assets/images/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
+                                                <img src="../../public/ace/assets/images/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
                                                 <span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Kate:</span>
@@ -252,7 +252,7 @@
 
                                         <li>
                                             <a href="#" class="clearfix">
-                                                <img src="assets/images/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
+                                                <img src="../../public/ace/assets/images/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
                                                 <span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Fred:</span>
@@ -280,7 +280,7 @@
 
                         <li class="light-blue dropdown-modal">
                             <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                                <img class="nav-user-photo" src="assets/images/avatars/user.jpg" alt="Jason's Photo" />
+                                <img class="nav-user-photo" src="../../public/ace/assets/images/avatars/user.jpg" alt="Jason's Photo" />
                                 <span class="user-info">
 									<small>Welcome,</small>
 									Jason
@@ -934,7 +934,7 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <!-- PAGE CONTENT BEGINS -->
-
+                                <router-view/>
                                 <!-- PAGE CONTENT ENDS -->
                             </div><!-- /.col -->
                         </div><!-- /.row -->
@@ -978,7 +978,11 @@
 
 <script>
     export default {
-        name: "admin.vue"
+        name: "admin",
+        mounted:function() {
+            $('body').attr('class','no-skin');
+            $('body').removeClass('login-layout light-login');
+        }
     }
 </script>
 
